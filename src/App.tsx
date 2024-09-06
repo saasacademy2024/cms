@@ -1,26 +1,29 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
+import { Container, makeStyles } from '@material-ui/core';
+import PackageList from './components/PackageList';
+import PackageDetails from './components/PackageDetailsV2';
 
-function App() {
+
+const useStyles = makeStyles(() => ({
+  root: {
+    backgroundColor: '#fafafa',
+  }
+}));
+
+const App: React.FC = () => {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Container className={classes.root}>
+        <Routes>
+          <Route path="/" element={<PackageList />} />
+          <Route path="/package/:id" element={<PackageDetails />} />
+        </Routes>
+      </Container>
+    </Router>
   );
-}
+};
 
 export default App;
