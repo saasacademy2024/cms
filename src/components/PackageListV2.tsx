@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Typography, Container, makeStyles, Fade, Tabs, Tab } from '@material-ui/core';
+import { Grid, Typography, Container, makeStyles, Fade, Tabs, Tab, useMediaQuery, useTheme } from '@material-ui/core';
 import PackageCard from './PackageCard';
 import { packages, Package } from '../data/packagesv2';
 
@@ -22,10 +22,19 @@ const useStyles = makeStyles((theme) => ({
   },
   tabs: {
     marginBottom: theme.spacing(4),
+    [theme.breakpoints.down('sm')]: {
+        maxWidth: '100%',
+        overflow: 'auto',
+      },
   },
   tab: {
     fontSize: '1rem',
     fontWeight: 600,
+     minWidth: 'auto',
+     [theme.breakpoints.down('sm')]: {
+       fontSize: '0.875rem',
+       padding: theme.spacing(1),
+     },
   },
   gridContainer: {
     marginTop: theme.spacing(4),
@@ -52,6 +61,8 @@ const categoryMapping: { [key: string]: string } = {
 };
 
 const PackageList: React.FC = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const classes = useStyles();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
@@ -81,7 +92,8 @@ const PackageList: React.FC = () => {
           onChange={handleCategoryChange}
           indicatorColor="primary"
           textColor="primary"
-          centered
+          centered={!isMobile}
+          variant={isMobile ? "scrollable" : "standard"}
           className={classes.tabs}
         >
           {categories.map((category) => (
