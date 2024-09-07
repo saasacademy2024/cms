@@ -15,7 +15,7 @@ export interface Package {
       description: 'Learn the fundamentals of Generative AI and its applications.',
       price: '100000 INR',
       category: 'Gen AI',
-      contentFile: 'gen-ai-intro.md',
+      contentFile: 'gen-ai.md',
     },
     {
       id: 'ui-development',

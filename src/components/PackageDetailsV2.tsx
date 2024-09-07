@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Container, CircularProgress, makeStyles, Paper, Grid, Chip, Button } from '@material-ui/core';
 import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { packages } from '../data/packages';
+import { packages } from '../data/packagesv2';
 import { ArrowBack } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +17,20 @@ const useStyles = makeStyles((theme) => ({
   },
   backButton: {
     marginBottom: theme.spacing(2),
+    '& .MuiButton-label': {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    '& .MuiButton-startIcon': {
+      marginRight: theme.spacing(1),
+    },
+    '& .MuiSvgIcon-root': {
+      fontSize: '1.5rem',
+    },
+  },
+  backButtonText: {
+    flex: 1,
+    textAlign: 'left',
   },
   title: {
     marginBottom: theme.spacing(2),
@@ -95,7 +109,7 @@ const PackageDetails: React.FC = () => {
         onClick={() => navigate('/')}
         className={classes.backButton}
       >
-        Back to Home
+                <p className={classes.backButtonText}>Back to Home</p>
       </Button>
       <Paper className={classes.paper} elevation={0}>
         <Grid container spacing={4}>

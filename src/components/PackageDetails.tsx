@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Container, CircularProgress, makeStyles } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { packages } from '../data/packages';
+import { packages } from '../data/packagesv2';
 
 const useStyles = makeStyles((theme) => ({
   root: {
