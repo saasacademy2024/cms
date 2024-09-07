@@ -55,7 +55,6 @@ const HeroSection: React.FC = () => {
 
   return (
     <Box className={classes.root}>
-      <Header />
       <Container maxWidth="md" className={classes.content}>
         <Typography component="h1" variant="h2" align="center" className={classes.title}>
           SAAS Academy

@@ -1,27 +1,17 @@
-// src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
-import { Container, makeStyles } from '@material-ui/core';
-import PackageList from './components/PackageList';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
 import PackageDetails from './components/PackageDetailsV2';
 
-
-const useStyles = makeStyles(() => ({
-  root: {
-    backgroundColor: '#fafafa',
-  }
-}));
-
 const App: React.FC = () => {
-  const classes = useStyles();
   return (
     <Router>
-      <Container className={classes.root}>
-        <Routes>
-          <Route path="/" element={<PackageList />} />
-          <Route path="/package/:id" element={<PackageDetails />} />
-        </Routes>
-      </Container>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/package/:id" element={<PackageDetails />} />
+      </Routes>
     </Router>
   );
 };

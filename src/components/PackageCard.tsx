@@ -10,11 +10,14 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
   },
   media: {
-    paddingTop: '56.25%', // 16:9 aspect ratio
+    height: 200, // Fixed height for all card media
     backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
   content: {
     flexGrow: 1,
+    display: 'flex',
+     flexDirection: 'column',
   },
   title: {
     fontWeight: 700,
@@ -22,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   description: {
     marginBottom: theme.spacing(2),
+    flexGrow: 1, 
   },
   button: {
     fontWeight: 700,

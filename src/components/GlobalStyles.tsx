@@ -6,6 +6,7 @@ const useStyles = makeStyles({
     '*': {
       scrollbarWidth: 'thin',
       scrollbarColor: '#6b6b6b #f1f1f1',
+      
     },
     '*::-webkit-scrollbar': {
       width: '8px',

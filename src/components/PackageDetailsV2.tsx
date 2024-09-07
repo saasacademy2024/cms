@@ -3,7 +3,7 @@ import { Typography, Container, CircularProgress, makeStyles, Paper, Grid, Chip,
 import { useParams, useNavigate } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import { packages } from '../data/packages';
-import { BookOutlined, TimerOutlined, StarOutline, ArrowBack } from '@material-ui/icons';
+import { ArrowBack } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
